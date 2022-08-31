@@ -4,4 +4,6 @@
 /misc.xml
 /modules.xml
 /vcs.xml
-../SpeedConverter.iml
+/../SpeedConverter.iml
+/libraries/junit_jupiter.xml
+
