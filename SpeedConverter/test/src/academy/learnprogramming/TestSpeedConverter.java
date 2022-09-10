@@ -25,6 +25,12 @@ class TestSpeedConverter {
 
         milesPerHour = SpeedConverter.toMilesPerHour(75.114);
         assertEquals(47L, milesPerHour);
+
+        milesPerHour = SpeedConverter.toMilesPerHour(0);
+        assertEquals(0, milesPerHour);
+
+        milesPerHour = SpeedConverter.toMilesPerHour(-1.5);
+        assertEquals(-1L, milesPerHour);
     }
 
     @Test
