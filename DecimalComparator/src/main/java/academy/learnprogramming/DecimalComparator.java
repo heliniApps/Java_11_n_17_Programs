@@ -1,19 +1,63 @@
 package academy.learnprogramming;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class DecimalComparator {
 
     /*
-    * Option 1: Comparing double values up to 3 decimal places.
+    * Option 1: Comparing double values up to 3 decimal places. (without rounding)
+    * This implementation uses BigDecimal.setScale() function to avoid the rounding of decimal points.
     * */
     public static boolean areEqualByThreeDecimalPlaces(double value1, double value2) {
 
-        return false;
+        if (Double.valueOf(value1).isNaN() || Double.valueOf(value2).isNaN()) {
+            return false;
+        }
+
+        BigDecimal bdValue1 = BigDecimal.valueOf(value1).setScale(3, RoundingMode.DOWN);
+        BigDecimal bdValue2 = BigDecimal.valueOf(value2).setScale(3, RoundingMode.DOWN);
+
+        return (bdValue1.equals(bdValue2));
     }
 
     /*
-    * Option 2: Lengthy way of comparing double values up to 3 decimal places.
-    * */
+     * Option 2: Comparing double values up to 3 decimal places. (without rounding)
+     * This implementation uses a calculation based on Math.floor()/Math.Ceil() functions
+     * to avoid the rounding of decimal points.
+     * */
     public static boolean areEqualByThreeDecimalPlaces_v2(double value1, double value2) {
+
+        if (Double.valueOf(value1).isNaN() || Double.valueOf(value2).isNaN()) {
+            return false;
+        }
+
+        String formattedValue1;
+        String formattedValue2;
+
+        if (value1 < 0) {
+            formattedValue1 = String.format("%1$.3f", (Math.ceil(value1 * 1000) / 1000));
+        } else {
+            formattedValue1 = String.format("%1$.3f", (Math.floor(value1 * 1000) / 1000));
+        }
+
+        if (value2 < 0) {
+            formattedValue2 = String.format("%1$.3f", (Math.ceil(value2 * 1000) / 1000));
+        } else {
+            formattedValue2 = String.format("%1$.3f", (Math.floor(value2 * 1000) / 1000));
+        }
+
+        return (formattedValue1.trim().contentEquals(formattedValue2.trim()));
+    }
+
+    /*
+    * Option 3: Lengthy way of comparing double values up to 3 decimal places.
+    * */
+    public static boolean areEqualByThreeDecimalPlaces_v3(double value1, double value2) {
+
+        if (Double.valueOf(value1).isNaN() || Double.valueOf(value2).isNaN()) {
+            return false;
+        }
 
         String value1Str = String.valueOf(value1).trim();
         String value2Str = String.valueOf(value2).trim();
