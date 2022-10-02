@@ -91,4 +91,26 @@ public class DecimalComparator {
         return (compareValue1.trim().contentEquals(compareValue2.trim()));
     }
 
+    private static boolean decimalValueComparator(
+            double value1,
+            double value2,
+            int decimalScale,
+            RoundingMode roundingMode) {
+
+        if (Double.valueOf(value1).isNaN() || Double.valueOf(value2).isNaN()) {
+            return false;
+        }
+        if (decimalScale < 0) {
+            return false;
+        }
+        if (roundingMode == null){
+            return false;
+        }
+
+        BigDecimal bdValue1 = BigDecimal.valueOf(value1).setScale(decimalScale, roundingMode);
+        BigDecimal bdValue2 = BigDecimal.valueOf(value2).setScale(decimalScale, roundingMode);
+
+        return (bdValue1.equals(bdValue2));
+
+    }
 }
