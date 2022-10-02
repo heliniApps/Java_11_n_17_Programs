@@ -11,8 +11,8 @@ public class DecimalComparator {
     * */
     public static boolean areEqualByThreeDecimalPlaces(double value1, double value2) {
 
-        return decimalValueComparator(value1, value2, 3, RoundingMode.DOWN);
-
+        return decimalValueComparator(value1, value2, 3);
+        
     }
 
     /*
