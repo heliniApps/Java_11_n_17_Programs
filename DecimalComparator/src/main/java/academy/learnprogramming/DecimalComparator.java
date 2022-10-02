@@ -11,14 +11,8 @@ public class DecimalComparator {
     * */
     public static boolean areEqualByThreeDecimalPlaces(double value1, double value2) {
 
-        if (Double.valueOf(value1).isNaN() || Double.valueOf(value2).isNaN()) {
-            return false;
-        }
+        return decimalValueComparator(value1, value2, 3);
 
-        BigDecimal bdValue1 = BigDecimal.valueOf(value1).setScale(3, RoundingMode.DOWN);
-        BigDecimal bdValue2 = BigDecimal.valueOf(value2).setScale(3, RoundingMode.DOWN);
-
-        return (bdValue1.equals(bdValue2));
     }
 
     /*
@@ -91,4 +85,18 @@ public class DecimalComparator {
         return (compareValue1.trim().contentEquals(compareValue2.trim()));
     }
 
+    private static boolean decimalValueComparator(double value1, double value2, int decimalScale) {
+
+        if (Double.valueOf(value1).isNaN() || Double.valueOf(value2).isNaN()) {
+            return false;
+        }
+        if (decimalScale < 0) {
+            return false;
+        }
+
+        BigDecimal bdValue1 = BigDecimal.valueOf(value1).setScale(decimalScale, RoundingMode.DOWN);
+        BigDecimal bdValue2 = BigDecimal.valueOf(value2).setScale(decimalScale, RoundingMode.DOWN);
+
+        return (bdValue1.equals(bdValue2));
+    }
 }
