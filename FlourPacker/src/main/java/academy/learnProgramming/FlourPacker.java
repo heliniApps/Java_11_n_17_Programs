@@ -12,12 +12,10 @@ public class FlourPacker {
      */
     public static boolean canPack(int bigCount, int smallCount, int goal) {
 
-        if((bigCount < 0) || (smallCount < 0) || (goal < 0)) {
+        if(!isValidArgument(bigCount) || !isValidArgument(smallCount) || !isValidArgument(goal)) {
             return false;
         }
-
-        int allAvailableKilos = ((bigCount * 5) + smallCount);
-        if (allAvailableKilos < goal) {
+        if (!isValidGoal(bigCount, smallCount, goal)) {
             return false;
         }
 
@@ -36,5 +34,16 @@ public class FlourPacker {
         }
 
         return false;
+    }
+
+    private static boolean isValidArgument(int arg) {
+        return (arg >= 0);
+    }
+
+    private static boolean isValidGoal(int bigCount, int smallCount, int goal) {
+
+        int allAvailableKilos = ((bigCount * 5) + smallCount);
+
+        return (allAvailableKilos >= goal);
     }
 }
