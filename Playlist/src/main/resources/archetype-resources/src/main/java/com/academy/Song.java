@@ -3,9 +3,9 @@ package com.academy;
 public class Song {
     
     private String title;
-    private int duration;
+    private double duration;
 
-    public Song(String title, int duration) {
+    public Song(String title, double duration) {
         this.title = title;
         this.duration = duration;
     }
@@ -18,15 +18,15 @@ public class Song {
         this.title = title;
     }
 
-    public int getDuration() {
+    public double getDuration() {
         return duration;
     }
 
-    public void setDuration(int duration) {
+    public void setDuration(double duration) {
         this.duration = duration;
     }
 
-    public static Song createSong(String title, int duration) {
+    public static Song createSong(String title, double duration) {
         return new Song(title, duration);
     }
 

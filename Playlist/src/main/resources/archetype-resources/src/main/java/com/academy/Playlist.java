@@ -156,6 +156,7 @@ public class Playlist {
                     break;
 
                 case 8:
+                    // testing: adding through an Iterator.
                     Song newSong = Song.createSong("Random Song:  Breaking the Rules ;)", 6);
                     listItr.add(newSong);
                     System.out.println("Added song  ::: " + newSong.toString());

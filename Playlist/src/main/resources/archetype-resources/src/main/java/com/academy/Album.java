@@ -24,7 +24,7 @@ public class Album {
         return songs;
     }
 
-    public boolean addSong(String title, int duration) {
+    public boolean addSong(String title, double duration) {
 
         if (!isValidSong(title, duration)) {
             return false;
@@ -71,7 +71,7 @@ public class Album {
         return ((title != null) && (!title.isBlank()));
     }
 
-    private boolean isValidSong(String title, int duration) {
+    private boolean isValidSong(String title, double duration) {
         return (isValidTitle(title) && (duration > 0));
     }
 
