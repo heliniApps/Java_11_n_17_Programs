@@ -1,0 +1,4 @@
+/target/*
+/src/main/resources/META-INF/*
+/src/test/resources/*
+/src/main/resources/archetype-resources/src/test/java/AppTest.java
