@@ -4,13 +4,14 @@ import main.java.com.academy.player.Player;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 public abstract class Team<T extends Player> implements Comparable<Team<T>>{
 
     private String name;
     private double score;
     private int gamesPlayed;
-    private ArrayList<T> teamMembers;
+    private List<T> teamMembers;
 
     public Team(String name, double score, int gamesPlayed) {
         this.name = name;

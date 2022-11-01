@@ -9,10 +9,11 @@ import java.util.List;
 public class LeagueTable<T extends Team> {
 
     private String leagueName;
-    private List<T> teams = new ArrayList<>();
+    private List<T> teams;
 
     public LeagueTable(String leagueName) {
         this.leagueName = leagueName;
+        this.teams = new ArrayList<>();
     }
 
     public String getLeagueName() {
@@ -33,7 +34,7 @@ public class LeagueTable<T extends Team> {
 
     public void printLeagueBoard(boolean printPlayerRanking) {
         Collections.sort(teams);
-        for (Team t : teams) {
+        for (T t : teams) {
             System.out.println("Team : " + t.getName());
             if (printPlayerRanking) {
                 t.printPlayerRanking();
