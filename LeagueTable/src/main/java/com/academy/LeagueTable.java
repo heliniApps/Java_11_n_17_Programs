@@ -1,5 +1,7 @@
 package main.java.com.academy;
 
+import main.java.com.academy.team.Team;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -29,10 +31,13 @@ public class LeagueTable<T extends Team> {
         return teams.add(team);
     }
 
-    public void printLeagueBoard() {
+    public void printLeagueBoard(boolean printPlayerRanking) {
         Collections.sort(teams);
         for (Team t : teams) {
-            System.out.println(t.getName());
+            System.out.println("Team : " + t.getName());
+            if (printPlayerRanking) {
+                t.printPlayerRanking();
+            }
         }
     }
 
