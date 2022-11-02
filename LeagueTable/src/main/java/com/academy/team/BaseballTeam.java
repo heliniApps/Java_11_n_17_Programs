@@ -1,6 +1,8 @@
-package main.java.com.academy;
+package main.java.com.academy.team;
 
-public class BaseballTeam extends Team {
+import main.java.com.academy.player.Player;
+
+public class BaseballTeam<T extends Player> extends Team<T> {
 
     public BaseballTeam(String name, double score, int gamesPlayed) {
         super(name, score, gamesPlayed);
