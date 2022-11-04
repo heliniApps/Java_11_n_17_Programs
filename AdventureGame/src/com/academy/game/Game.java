@@ -1,6 +1,7 @@
 package com.academy.game;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -23,11 +24,12 @@ public class Game {
     public void run() {
 
         Scanner scanner = new Scanner(System.in);
-        Map<Integer, Location> locationMap = new HashMap<>();
-        Map<String, String> directionKeyMap = new HashMap<>();
+        Map<Integer, Location> locationMap = initLocationMap();
+        Map<String, String> directionKeyMap = initDirectionKeyMap();
 
-        addLocations(locationMap);
-        addInputDirectionKeys(directionKeyMap);
+        if ((locationMap == null) || (directionKeyMap == null)) {
+            return;
+        }
 
         int locId = 1;
         boolean isExit = false;
@@ -71,8 +73,9 @@ public class Game {
         return directionKey;
     }
 
-    private void addLocations(Map<Integer, Location> locationMap) {
+    private Map<Integer, Location> initLocationMap() {
 
+        Map<Integer, Location> locationMap = new LinkedHashMap<>();
         int locationId1 = 1;
         int locationId2 = 2;
         int locationId3 = 3;
@@ -80,29 +83,33 @@ public class Game {
         int locationId5 = 5;
 
         locationMap.put(BASE_LOCATION_ID, new Location(BASE_LOCATION_ID, "Home"));
-        locationMap.put(locationId1, new Location(locationId1, "Office"));
-        locationMap.put(locationId2, new Location(locationId2, "Cafe"));
-        locationMap.put(locationId3, new Location(locationId3, "Luncheon Hub"));
-        locationMap.put(locationId4, new Location(locationId4, "Dinner Restaurant"));
-        locationMap.put(locationId5, new Location(locationId5, "Gym"));
 
+        locationMap.put(locationId1, new Location(locationId1, "Office"));
         locationMap.get(locationId1).addExit(DIRECTION_NORTH, locationId5);
         locationMap.get(locationId1).addExit(DIRECTION_SOUTH, locationId4);
         locationMap.get(locationId1).addExit(DIRECTION_EAST, locationId3);
         locationMap.get(locationId1).addExit(DIRECTION_WEST, locationId2);
 
+        locationMap.put(locationId2, new Location(locationId2, "Cafe"));
         locationMap.get(locationId2).addExit(DIRECTION_NORTH, locationId5);
 
+        locationMap.put(locationId3, new Location(locationId3, "Luncheon Hub"));
         locationMap.get(locationId3).addExit(DIRECTION_WEST, locationId1);
 
+        locationMap.put(locationId4, new Location(locationId4, "Dinner Restaurant"));
         locationMap.get(locationId4).addExit(DIRECTION_NORTH, locationId1);
         locationMap.get(locationId4).addExit(DIRECTION_WEST, locationId2);
 
+        locationMap.put(locationId5, new Location(locationId5, "Gym"));
         locationMap.get(locationId5).addExit(DIRECTION_SOUTH, locationId1);
         locationMap.get(locationId5).addExit(DIRECTION_WEST, locationId2);
+
+        return locationMap;
     }
 
-    private void addInputDirectionKeys(Map<String, String> directionKeyMap) {
+    private Map<String, String> initDirectionKeyMap() {
+
+        Map<String, String> directionKeyMap = new HashMap<>();
         directionKeyMap.put("NORTH", "N");
         directionKeyMap.put("SOUTH", "S");
         directionKeyMap.put("EAST", "E");
@@ -113,6 +120,8 @@ public class Game {
         directionKeyMap.put("E", "E");
         directionKeyMap.put("W", "W");
         directionKeyMap.put("Q", "Q");
+
+        return directionKeyMap;
     }
 
 }
