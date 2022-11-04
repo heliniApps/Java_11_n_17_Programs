@@ -3,16 +3,20 @@ package com.academy.game;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class Location {
+public final class Location {
 
     private final int locationId;
     private final String description;
     private final Map<String, Integer> exits;
 
-    public Location(int locationId, String description) {
+    public Location(int locationId, String description, Map<String, Integer> exits) {
         this.locationId = locationId;
         this.description = description;
-        this.exits = new LinkedHashMap<String, Integer>();
+        if (exits != null) {
+            this.exits = new LinkedHashMap<>(exits);
+        } else {
+            this.exits = new LinkedHashMap<>();
+        }
         this.exits.put(Game.DIRECTION_QUIT, Game.BASE_LOCATION_ID);
     }
 
@@ -26,9 +30,5 @@ public class Location {
 
     public Map<String, Integer> getExits() {
         return new LinkedHashMap<String, Integer>(this.exits);
-    }
-
-    public void addExit(String direction, int locationId) {
-        this.exits.put(direction, locationId);
     }
 }

@@ -35,7 +35,7 @@ public class Game {
         boolean isExit = false;
         while (!isExit) {
             System.out.println("Current location is : " + locationMap.get(locId).getDescription());
-            if (locId == 0) {
+            if (locId == BASE_LOCATION_ID) {
                 isExit = true;
                 continue;
             }
@@ -82,27 +82,33 @@ public class Game {
         int locationId4 = 4;
         int locationId5 = 5;
 
-        locationMap.put(BASE_LOCATION_ID, new Location(BASE_LOCATION_ID, "Home"));
+        Map<String, Integer> tempExits = new LinkedHashMap<>();
+        locationMap.put(BASE_LOCATION_ID, new Location(BASE_LOCATION_ID, "Home", tempExits));
 
-        locationMap.put(locationId1, new Location(locationId1, "Office"));
-        locationMap.get(locationId1).addExit(DIRECTION_NORTH, locationId5);
-        locationMap.get(locationId1).addExit(DIRECTION_SOUTH, locationId4);
-        locationMap.get(locationId1).addExit(DIRECTION_EAST, locationId3);
-        locationMap.get(locationId1).addExit(DIRECTION_WEST, locationId2);
+        tempExits = new LinkedHashMap<>();
+        tempExits.put(DIRECTION_NORTH, locationId5);
+        tempExits.put(DIRECTION_SOUTH, locationId4);
+        tempExits.put(DIRECTION_EAST, locationId3);
+        tempExits.put(DIRECTION_WEST, locationId2);
+        locationMap.put(locationId1, new Location(locationId1, "Office", tempExits));
 
-        locationMap.put(locationId2, new Location(locationId2, "Cafe"));
-        locationMap.get(locationId2).addExit(DIRECTION_NORTH, locationId5);
+        tempExits = new LinkedHashMap<>();
+        tempExits.put(DIRECTION_NORTH, locationId5);
+        locationMap.put(locationId2, new Location(locationId2, "Cafe", tempExits));
 
-        locationMap.put(locationId3, new Location(locationId3, "Luncheon Hub"));
-        locationMap.get(locationId3).addExit(DIRECTION_WEST, locationId1);
+        tempExits = new LinkedHashMap<>();
+        tempExits.put(DIRECTION_WEST, locationId1);
+        locationMap.put(locationId3, new Location(locationId3, "Luncheon Hub", tempExits));
 
-        locationMap.put(locationId4, new Location(locationId4, "Dinner Restaurant"));
-        locationMap.get(locationId4).addExit(DIRECTION_NORTH, locationId1);
-        locationMap.get(locationId4).addExit(DIRECTION_WEST, locationId2);
+        tempExits = new LinkedHashMap<>();
+        tempExits.put(DIRECTION_NORTH, locationId1);
+        tempExits.put(DIRECTION_WEST, locationId2);
+        locationMap.put(locationId4, new Location(locationId4, "Dinner Restaurant", tempExits));
 
-        locationMap.put(locationId5, new Location(locationId5, "Gym"));
-        locationMap.get(locationId5).addExit(DIRECTION_SOUTH, locationId1);
-        locationMap.get(locationId5).addExit(DIRECTION_WEST, locationId2);
+        tempExits = new LinkedHashMap<>();
+        tempExits.put(DIRECTION_SOUTH, locationId1);
+        tempExits.put(DIRECTION_WEST, locationId2);
+        locationMap.put(locationId5, new Location(locationId5, "Gym", tempExits));
 
         return locationMap;
     }
@@ -110,16 +116,16 @@ public class Game {
     private Map<String, String> initDirectionKeyMap() {
 
         Map<String, String> directionKeyMap = new HashMap<>();
-        directionKeyMap.put("NORTH", "N");
-        directionKeyMap.put("SOUTH", "S");
-        directionKeyMap.put("EAST", "E");
-        directionKeyMap.put("WEST", "W");
-        directionKeyMap.put("QUIT", "Q");
-        directionKeyMap.put("N", "N");
-        directionKeyMap.put("S", "S");
-        directionKeyMap.put("E", "E");
-        directionKeyMap.put("W", "W");
-        directionKeyMap.put("Q", "Q");
+        directionKeyMap.put("NORTH", DIRECTION_NORTH);
+        directionKeyMap.put("SOUTH", DIRECTION_SOUTH);
+        directionKeyMap.put("EAST", DIRECTION_EAST);
+        directionKeyMap.put("WEST", DIRECTION_WEST);
+        directionKeyMap.put("QUIT", DIRECTION_QUIT);
+        directionKeyMap.put("N", DIRECTION_NORTH);
+        directionKeyMap.put("S", DIRECTION_SOUTH);
+        directionKeyMap.put("E", DIRECTION_EAST);
+        directionKeyMap.put("W", DIRECTION_WEST);
+        directionKeyMap.put("Q", DIRECTION_QUIT);
 
         return directionKeyMap;
     }
