@@ -8,8 +8,8 @@ public class Process {
     private static final StockList stockList = new StockList();
 
     /**
-     * This function hide the logic for populating the stock list from the Users,
-     * who are using the shopping cart to add/remove items.
+     * This function hides the logic for populating the stock list,
+     * and initiates the shopping cart.
      *
      * @return - Returns an instance of the process, which contains the list of stock items.
      */
