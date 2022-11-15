@@ -7,6 +7,8 @@ public class Process {
 
     private static final StockList stockList = new StockList();
 
+    private Process() { }
+
     /**
      * This function hides the logic for populating the stock list,
      * and initiates the shopping cart.
