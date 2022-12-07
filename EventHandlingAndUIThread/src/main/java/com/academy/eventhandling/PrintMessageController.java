@@ -21,12 +21,19 @@ public class PrintMessageController {
     private CheckBox clearCheckBox;
     @FXML
     private Label threadText;
+    @FXML
+    private Button anonymousActBtn;
 
     @FXML
     public void initialize() {
         disableButtons(true);
         clearCheckBox.setSelected(false);
         clearLabels();
+
+        anonymousActBtn.setOnAction(event -> {
+            String buttonText = ((Button) event.getSource()).getText();
+            System.out.println("Clicked on Button '" + buttonText + "'");
+        });
     }
 
     @FXML
@@ -54,29 +61,22 @@ public class PrintMessageController {
             disableButtons(true);
         }
 
-        // Update the threadText Label on a background task.
-        Runnable task = new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    String msg = "Sleeping on, " + (Platform.isFxApplicationThread() ? "UI Thread" : " Background Task");
-                    System.out.println(msg);
+        // Delay the update of threadText Label, on a background task.
+        Runnable task = () -> {
+            try {
+                String msg = "Sleeping on, " + (Platform.isFxApplicationThread() ? "UI Thread" : " Background Task");
+                System.out.println(msg);
 
-                    Thread.sleep(10000);
-                } catch (InterruptedException ex) {
-                    ex.printStackTrace();
-                }
-
-                Platform.runLater(new Runnable() {
-                    @Override
-                    public void run() {
-                        String msg = "Updating label on, " + (Platform.isFxApplicationThread() ? "UI Thread" : " Background Task");
-                        System.out.println(msg);
-
-                        updateLabelThreadText(event);
-                    }
-                });
+                Thread.sleep(10000);
+            } catch (InterruptedException ex) {
+                ex.printStackTrace();
             }
+
+            Platform.runLater(() -> {
+                String msg = "Updating label on, " + (Platform.isFxApplicationThread() ? "UI Thread" : " Background Task");
+                System.out.println(msg);
+                updateThreadTextLabel(event);
+            });
         };
         new Thread(task).start();
     }
@@ -91,7 +91,7 @@ public class PrintMessageController {
         farewellButton.setDisable(isDisabled);
     }
 
-    private void updateLabelThreadText(ActionEvent buttonEvent) {
+    private void updateThreadTextLabel(ActionEvent buttonEvent) {
         String message = "";
         if (buttonEvent.getSource().equals(welcomeButton)) {
             message = "Welcome to Thread testing.";

@@ -25,4 +25,5 @@
     </HBox>
     <CheckBox fx:id="clearCheckBox" text="Clear the field after saying hello or bye."
               onAction="#onCheckBoxChange" />
+    <Button fx:id="anonymousActBtn" text="Anonymous Action" />
 </VBox>
