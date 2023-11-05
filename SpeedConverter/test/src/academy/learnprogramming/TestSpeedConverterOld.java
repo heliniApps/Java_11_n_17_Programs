@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class TestSpeedConverter {
+class TestSpeedConverterOld {
 
     @BeforeEach
     void setUp() {
@@ -20,22 +20,22 @@ class TestSpeedConverter {
 
     @Test
     void toMilesPerHour() {
-        long milesPerHour = SpeedConverter.toMilesPerHour(25.42);
+        long milesPerHour = SpeedConverterOld.toMilesPerHour(25.42);
         assertEquals(16L, milesPerHour);
 
-        milesPerHour = SpeedConverter.toMilesPerHour(75.114);
+        milesPerHour = SpeedConverterOld.toMilesPerHour(75.114);
         assertEquals(47L, milesPerHour);
 
-        milesPerHour = SpeedConverter.toMilesPerHour(0);
+        milesPerHour = SpeedConverterOld.toMilesPerHour(0);
         assertEquals(0, milesPerHour);
 
-        milesPerHour = SpeedConverter.toMilesPerHour(-1.5);
+        milesPerHour = SpeedConverterOld.toMilesPerHour(-1.5);
         assertEquals(-1L, milesPerHour);
     }
 
     @Test
     void printConversion() {
-        SpeedConverter.printConversion(1.5);
-        SpeedConverter.printConversion(-5.6);
+        SpeedConverterOld.printConversion(1.5);
+        SpeedConverterOld.printConversion(-5.6);
     }
 }
