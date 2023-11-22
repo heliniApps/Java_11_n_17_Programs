@@ -8,4 +8,8 @@
 /libraries/junit_jupiter.xml
 /uiDesigner.xml
 /codeStyles/*
+/../test/coverageReports/academy.learnprogramming/*
+/../test/coverageReports/jacoco-resources/*
+/../test/coverageReports/*
+
 
