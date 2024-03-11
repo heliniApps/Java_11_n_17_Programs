@@ -13,9 +13,16 @@ public class MegaBytesConverter {
             System.out.println("Invalid Value");
             return;
         }
-        int kiloBytesInMb = 1024;
-        int megaBytes = kiloBytes / kiloBytesInMb;
-        int kiloBytesRemainder = kiloBytes % kiloBytesInMb;
+        int megaBytes = (kiloBytes / 1024);
+        int kiloBytesRemainder = (kiloBytes % 1024);
         System.out.println(kiloBytes + " KB = " + megaBytes + " MB and " + kiloBytesRemainder + " KB");
+    }
+
+    /* Version 1 */
+    public static void printMegaBytesAndKiloBytesV1(int kiloBytes) {
+        String conversionText = (kiloBytes >= 0) ?
+                String.format("%1$d KB = %2$d MB and %3$d KB", kiloBytes, (kiloBytes / 1024), (kiloBytes % 1024)) :
+                "Invalid Value";
+        System.out.println(conversionText);
     }
 }

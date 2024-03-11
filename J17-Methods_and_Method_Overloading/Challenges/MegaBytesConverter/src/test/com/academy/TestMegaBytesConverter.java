@@ -45,4 +45,28 @@ class TestMegaBytesConverter {
         Assertions.assertEquals("5000 KB = 4 MB and 904 KB", outStreamCaptor.toString().trim());
         outStreamCaptor.reset();
     }
+
+    // Testing 'Version 1'
+    @Test
+    void printMegaBytesAndKiloBytesV1() {
+        MegaBytesConverter.printMegaBytesAndKiloBytesV1(-1024);
+        Assertions.assertEquals("Invalid Value", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        MegaBytesConverter.printMegaBytesAndKiloBytesV1(-1);
+        Assertions.assertEquals("Invalid Value", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        MegaBytesConverter.printMegaBytesAndKiloBytesV1(0);
+        Assertions.assertEquals("0 KB = 0 MB and 0 KB", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        MegaBytesConverter.printMegaBytesAndKiloBytesV1(2500);
+        Assertions.assertEquals("2500 KB = 2 MB and 452 KB", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        MegaBytesConverter.printMegaBytesAndKiloBytesV1(5000);
+        Assertions.assertEquals("5000 KB = 4 MB and 904 KB", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+    }
 }

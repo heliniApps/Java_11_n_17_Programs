@@ -20,6 +20,11 @@ public class DecimalComparator {
         return (decimal1.doubleValue() == decimal2.doubleValue());
     }
 
+    /* Version 2 */
+    public static boolean areEqualByThreeDecimalPlacesV2(double param1, double param2) {
+        return (int) (param1 * 1000) == (int) (param2 * 1000);
+    }
+
     /* Version 1 */
     public static boolean areEqualByThreeDecimalPlacesV1(double param1, double param2) {
         int param1AsInt = (int) (param1 * 1000);
