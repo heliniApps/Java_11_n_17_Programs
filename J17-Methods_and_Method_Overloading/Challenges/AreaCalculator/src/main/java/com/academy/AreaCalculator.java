@@ -9,7 +9,7 @@ public class AreaCalculator {
      * @return area of the circle.
      */
     public static double area(double radius) {
-        return (radius >= 0) ? (radius * radius * Math.PI) : -1d;
+        return (radius < 0) ? -1d : (radius * radius * Math.PI);
     }
 
     /**
@@ -20,6 +20,6 @@ public class AreaCalculator {
      * @return area of the rectangle.
      */
     public static double area(double width, double height) {
-        return (width >= 0) && (height >= 0) ? (width * height) : -1d;
+        return (width < 0) || (height < 0) ? -1d : (width * height);
     }
 }
