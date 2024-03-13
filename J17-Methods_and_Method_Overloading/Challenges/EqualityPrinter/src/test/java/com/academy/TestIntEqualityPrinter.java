@@ -85,4 +85,130 @@ class TestIntEqualityPrinter {
         Assertions.assertEquals("Neither all are equal or different", outStreamCaptor.toString().trim());
         outStreamCaptor.reset();
     }
+
+    @Test
+    void printEqualV2() {
+        // Invalid
+        IntEqualityPrinter.printEqualV2(1, 1, -1);
+        Assertions.assertEquals("Invalid Value", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        IntEqualityPrinter.printEqualV2(1, -1, 1);
+        Assertions.assertEquals("Invalid Value", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        IntEqualityPrinter.printEqualV2(-1, 1, 1);
+        Assertions.assertEquals("Invalid Value", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        IntEqualityPrinter.printEqualV2(-1, -1, -1);
+        Assertions.assertEquals("Invalid Value", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        // All equal
+        IntEqualityPrinter.printEqualV2(0, 0, 0);
+        Assertions.assertEquals("All numbers are equal", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        IntEqualityPrinter.printEqualV2(1, 1, 1);
+        Assertions.assertEquals("All numbers are equal", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        IntEqualityPrinter.printEqualV2(10, 10, 10);
+        Assertions.assertEquals("All numbers are equal", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        IntEqualityPrinter.printEqualV2(23, 23, 23);
+        Assertions.assertEquals("All numbers are equal", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        // All different
+        IntEqualityPrinter.printEqualV2(0, 10, 20);
+        Assertions.assertEquals("All numbers are different", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        IntEqualityPrinter.printEqualV2(1, 2, 3);
+        Assertions.assertEquals("All numbers are different", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        IntEqualityPrinter.printEqualV2(14, 98, 345);
+        Assertions.assertEquals("All numbers are different", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        // Neither all are equal nor different
+        IntEqualityPrinter.printEqualV2(14, 14, 345);
+        Assertions.assertEquals("Neither all are equal or different", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        IntEqualityPrinter.printEqualV2(345, 98, 345);
+        Assertions.assertEquals("Neither all are equal or different", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        IntEqualityPrinter.printEqualV2(14, 98, 98);
+        Assertions.assertEquals("Neither all are equal or different", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+    }
+
+    @Test
+    void printEqualV1() {
+        // Invalid
+        IntEqualityPrinter.printEqualV1(1, 1, -1);
+        Assertions.assertEquals("Invalid Value", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        IntEqualityPrinter.printEqualV1(1, -1, 1);
+        Assertions.assertEquals("Invalid Value", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        IntEqualityPrinter.printEqualV1(-1, 1, 1);
+        Assertions.assertEquals("Invalid Value", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        IntEqualityPrinter.printEqualV1(-1, -1, -1);
+        Assertions.assertEquals("Invalid Value", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        // All equal
+        IntEqualityPrinter.printEqualV1(0, 0, 0);
+        Assertions.assertEquals("All numbers are equal", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        IntEqualityPrinter.printEqualV1(1, 1, 1);
+        Assertions.assertEquals("All numbers are equal", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        IntEqualityPrinter.printEqualV1(10, 10, 10);
+        Assertions.assertEquals("All numbers are equal", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        IntEqualityPrinter.printEqualV1(23, 23, 23);
+        Assertions.assertEquals("All numbers are equal", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        // All different
+        IntEqualityPrinter.printEqualV1(0, 10, 20);
+        Assertions.assertEquals("All numbers are different", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        IntEqualityPrinter.printEqualV1(1, 2, 3);
+        Assertions.assertEquals("All numbers are different", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        IntEqualityPrinter.printEqualV1(14, 98, 345);
+        Assertions.assertEquals("All numbers are different", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        // Neither all are equal nor different
+        IntEqualityPrinter.printEqualV1(14, 14, 345);
+        Assertions.assertEquals("Neither all are equal or different", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        IntEqualityPrinter.printEqualV1(345, 98, 345);
+        Assertions.assertEquals("Neither all are equal or different", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        IntEqualityPrinter.printEqualV1(14, 98, 98);
+        Assertions.assertEquals("Neither all are equal or different", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+    }
 }
