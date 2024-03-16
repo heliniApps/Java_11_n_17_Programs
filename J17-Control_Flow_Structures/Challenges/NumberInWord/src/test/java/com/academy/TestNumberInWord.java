@@ -52,6 +52,33 @@ class TestNumberInWord {
 
 
     @Test
+    void printNumberInWordV5() {
+        NumberInWord.printNumberInWordV5(0);
+        Assertions.assertEquals("ZERO", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        NumberInWord.printNumberInWordV5(3);
+        Assertions.assertEquals("THREE", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        NumberInWord.printNumberInWordV5(7);
+        Assertions.assertEquals("SEVEN", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        NumberInWord.printNumberInWordV5(9);
+        Assertions.assertEquals("NINE", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        NumberInWord.printNumberInWordV5(10);
+        Assertions.assertEquals("OTHER", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+
+        NumberInWord.printNumberInWordV5(-1);
+        Assertions.assertEquals("OTHER", outStreamCaptor.toString().trim());
+        outStreamCaptor.reset();
+    }
+
+    @Test
     void printNumberInWordV4() {
         NumberInWord.printNumberInWordV4(0);
         Assertions.assertEquals("ZERO", outStreamCaptor.toString().trim());

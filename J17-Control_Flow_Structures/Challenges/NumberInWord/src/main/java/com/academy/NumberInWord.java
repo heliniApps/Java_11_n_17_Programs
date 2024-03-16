@@ -1,6 +1,8 @@
 package com.academy;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class NumberInWord {
 
@@ -25,6 +27,30 @@ public class NumberInWord {
             default -> "OTHER";
         };
         System.out.println(word);
+    }
+
+    /* Version 5
+     * Using a HashMap to store the phrases against their equivalent numbers.
+     * Retrieve using the 'number' argument as the 'key'.
+     */
+    public static void printNumberInWordV5(int number) {
+        String otherPhrase = "OTHER";
+        Map<Integer, String> words = new HashMap<>();
+        words.put(0, "ZERO");
+        words.put(1, "ONE");
+        words.put(2, "TWO");
+        words.put(3, "THREE");
+        words.put(4, "FOUR");
+        words.put(5, "FIVE");
+        words.put(6, "SIX");
+        words.put(7, "SEVEN");
+        words.put(8, "EIGHT");
+        words.put(9, "NINE");
+
+        switch (number) {
+            case 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 -> System.out.println(words.get(number));
+            default -> System.out.println(otherPhrase);
+        }
     }
 
     /* Version 4
