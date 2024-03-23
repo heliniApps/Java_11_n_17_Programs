@@ -25,6 +25,7 @@ class TestSeries {
         Assertions.assertEquals(45, Series.nSum(9));
         Assertions.assertEquals(55, Series.nSum(10));
         Assertions.assertEquals(2850, Series.nSum(75));
+        // Assertions.assertEquals(2305843008139952128L, Series.nSum(Integer.MAX_VALUE));
     }
 
     @Test
@@ -33,7 +34,7 @@ class TestSeries {
         Assertions.assertEquals(-1, Series.factorial(-10));
         Assertions.assertEquals(-1, Series.factorial(-55));
 
-        Assertions.assertEquals(0, Series.factorial(0));
+        Assertions.assertEquals(1, Series.factorial(0));
         Assertions.assertEquals(1, Series.factorial(1));
         Assertions.assertEquals(2, Series.factorial(2));
         Assertions.assertEquals(6, Series.factorial(3));
@@ -44,6 +45,7 @@ class TestSeries {
         Assertions.assertEquals(40320, Series.factorial(8));
         Assertions.assertEquals(362880, Series.factorial(9));
         Assertions.assertEquals(3628800, Series.factorial(10));
+        // Assertions.assertEquals(0, Series.factorial(Integer.MAX_VALUE));
     }
 
     @Test
@@ -64,46 +66,6 @@ class TestSeries {
         Assertions.assertEquals(34, Series.fibonacci(9));
         Assertions.assertEquals(55, Series.fibonacci(10));
         Assertions.assertEquals(610, Series.fibonacci(15));
-    }
-
-
-    @Test
-    void fibonacciV1() {
-        Assertions.assertEquals(-1, Series.fibonacciV1(-1));
-        Assertions.assertEquals(-1, Series.fibonacciV1(-2));
-        Assertions.assertEquals(-1, Series.fibonacciV1(-10));
-
-        Assertions.assertEquals(0, Series.fibonacciV1(0));
-        Assertions.assertEquals(1, Series.fibonacciV1(1));
-        Assertions.assertEquals(1, Series.fibonacciV1(2));
-        Assertions.assertEquals(2, Series.fibonacciV1(3));
-        Assertions.assertEquals(3, Series.fibonacciV1(4));
-        Assertions.assertEquals(5, Series.fibonacciV1(5));
-        Assertions.assertEquals(8, Series.fibonacciV1(6));
-        Assertions.assertEquals(13, Series.fibonacciV1(7));
-        Assertions.assertEquals(21, Series.fibonacciV1(8));
-        Assertions.assertEquals(34, Series.fibonacciV1(9));
-        Assertions.assertEquals(55, Series.fibonacciV1(10));
-        Assertions.assertEquals(610, Series.fibonacciV1(15));
-    }
-
-    @Test
-    void fibonacciV2() {
-        Assertions.assertEquals(-1, Series.fibonacciV2(-1));
-        Assertions.assertEquals(-1, Series.fibonacciV2(-2));
-        Assertions.assertEquals(-1, Series.fibonacciV2(-10));
-
-        Assertions.assertEquals(0, Series.fibonacciV2(0));
-        Assertions.assertEquals(1, Series.fibonacciV2(1));
-        Assertions.assertEquals(1, Series.fibonacciV2(2));
-        Assertions.assertEquals(2, Series.fibonacciV2(3));
-        Assertions.assertEquals(3, Series.fibonacciV2(4));
-        Assertions.assertEquals(5, Series.fibonacciV2(5));
-        Assertions.assertEquals(8, Series.fibonacciV2(6));
-        Assertions.assertEquals(13, Series.fibonacciV2(7));
-        Assertions.assertEquals(21, Series.fibonacciV2(8));
-        Assertions.assertEquals(34, Series.fibonacciV2(9));
-        Assertions.assertEquals(55, Series.fibonacciV2(10));
-        Assertions.assertEquals(610, Series.fibonacciV2(15));
+        // Assertions.assertEquals(0, Series.fibonacci(Integer.MAX_VALUE));
     }
 }

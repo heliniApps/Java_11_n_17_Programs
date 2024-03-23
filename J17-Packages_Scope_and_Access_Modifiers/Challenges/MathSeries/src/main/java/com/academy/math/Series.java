@@ -8,11 +8,11 @@ public class Series {
      * @param n number up to which the sum should be calculated.
      * @return sum of all numbers from 0 to 'n'.
      */
-    public static int nSum(int n) {
+    public static long nSum(int n) {
         if (n < 0) {
             return -1;
         }
-        int sum = 0;
+        long sum = 0;
         for (int i = 0; i <= n; i++) {
             sum += i;
         }
@@ -21,17 +21,20 @@ public class Series {
 
     /**
      * Calculates the product of all numbers from 1 to 'n'.
+     * (!0) = 1
+     * (!1) = 1
+     * (!n) = 1 * 2 * ... * n
      *
      * @param n number up to which the product should be calculated.
      * @return product of all numbers from 1 to 'n'.
      */
-    public static int factorial(int n) {
+    public static long factorial(int n) {
         if (n < 0) {
             return -1;
         } else if (n == 0) {
-            return 0;
+            return 1;   //  (!0) = 1
         }
-        int factorial = 1;
+        long factorial = 1;
         for (int i = 1; i <= n; i++) {
             factorial *= i;
         }
@@ -45,7 +48,7 @@ public class Series {
      * @param n number to get the Fibonacci value.
      * @return the nth Fibonacci number.
      */
-    public static int fibonacci(int n) {
+    public static long fibonacci(int n) {
         if (n < 0) {
             return -1;
         }
@@ -54,36 +57,5 @@ public class Series {
             case 1 -> 1;
             default -> fibonacci(n - 1) + fibonacci(n - 2);
         };
-    }
-
-    /* Version 2:  fibonacci(n)
-     * Returning from the 'if' statement. Uses recursion.
-     */
-    public static int fibonacciV2(int n) {
-        if (n < 0) {
-            return -1;
-        } else if (n == 0) {
-            return 0;
-        } else if (n == 1) {
-            return 1;
-        }
-        return fibonacciV2(n - 1) + fibonacciV2(n - 2);
-    }
-
-    /* Version 1: fibonacci(n)
-     * Using 'if-else' to assign the value. Uses recursion.
-     */
-    public static int fibonacciV1(int n) {
-        int fibonacciValue = 0;
-        if (n < 0) {
-            fibonacciValue = -1;
-        } else if (n == 0) {
-            fibonacciValue = 0;
-        } else if (n == 1) {
-            fibonacciValue = 1;
-        } else {
-            fibonacciValue = fibonacciV1(n - 1) + fibonacciV1(n - 2);
-        }
-        return fibonacciValue;
     }
 }
