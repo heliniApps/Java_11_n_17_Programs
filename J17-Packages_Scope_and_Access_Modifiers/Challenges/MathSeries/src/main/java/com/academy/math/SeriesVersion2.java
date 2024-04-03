@@ -2,7 +2,7 @@ package com.academy.math;
 
 public class SeriesVersion2 {
 
-    /* Version2:  nSum(n)
+    /* nSum(n):  Version 2
      * Omitting the 'for' loop.
      */
     public static long nSumV2(int n) {
@@ -10,8 +10,35 @@ public class SeriesVersion2 {
         return (n * (n + 1L)) / 2L;
     }
 
+    /* nSum(n):  Version 3
+     * Uses recursion to get the sum from 0 - n.
+     */
+    public static long nSumV3(int n) {
+        if (n < 0) {
+            return -1;
+        } else if (n == 0) {
+            return 0;
+        } else if (n == 1) {
+            return 1;
+        }
+        return n + nSumV3(n - 1);
+    }
 
-    /* Version 3:  fibonacci(n)
+    /* factorial(n):  Version 2
+     * Uses recursion to get the product of numbers.
+     */
+    public static long factorialV2(int n) {
+        if (n < 0) {
+            return -1;
+        } else if (n == 0) {
+            return 1;
+        } else if (n == 1) {
+            return 1;
+        }
+        return n * factorialV2(n - 1);
+    }
+
+    /* fibonacci(n):  Version 3
      * Using a 'for' loop to calculate f(n-1) and f(n-2).
      * Omits recursion.
      */
@@ -39,7 +66,7 @@ public class SeriesVersion2 {
     }
 
 
-    /* Version 2:  fibonacci(n)
+    /* fibonacci(n):  Version 2
      * Returning from the 'if' statement. Uses recursion.
      */
     public static long fibonacciV2(int n) {
@@ -54,7 +81,7 @@ public class SeriesVersion2 {
     }
 
 
-    /* Version 1: fibonacci(n)
+    /* fibonacci(n):  Version 1
      * Using 'if-else' to assign the value. Uses recursion.
      */
     public static long fibonacciV1(int n) {
