@@ -1,0 +1,14 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+/misc.xml
+/modules.xml
+/scala_settings.xml
+/uiDesigner.xml
+/vcs.xml
+/codeStyles/*
+/libraries/*
+
+
+
+
