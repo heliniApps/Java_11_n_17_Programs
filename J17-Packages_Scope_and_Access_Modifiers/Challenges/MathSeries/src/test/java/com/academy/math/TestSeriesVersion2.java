@@ -27,6 +27,45 @@ class TestSeriesVersion2 {
         Assertions.assertEquals(2305843008139952128L, SeriesVersion2.nSumV2(Integer.MAX_VALUE));
     }
 
+    @Test
+    void nSumV3() {
+        Assertions.assertEquals(-1, SeriesVersion2.nSumV3(-1));
+        Assertions.assertEquals(-1, SeriesVersion2.nSumV3(-2));
+        Assertions.assertEquals(-1, SeriesVersion2.nSumV3(-10));
+        Assertions.assertEquals(-1, SeriesVersion2.nSumV3(-86));
+
+        Assertions.assertEquals(0, SeriesVersion2.nSumV3(0));
+        Assertions.assertEquals(1, SeriesVersion2.nSumV3(1));
+        Assertions.assertEquals(3, SeriesVersion2.nSumV3(2));
+        Assertions.assertEquals(6, SeriesVersion2.nSumV3(3));
+        Assertions.assertEquals(10, SeriesVersion2.nSumV3(4));
+        Assertions.assertEquals(15, SeriesVersion2.nSumV3(5));
+        Assertions.assertEquals(21, SeriesVersion2.nSumV3(6));
+        Assertions.assertEquals(28, SeriesVersion2.nSumV3(7));
+        Assertions.assertEquals(36, SeriesVersion2.nSumV3(8));
+        Assertions.assertEquals(45, SeriesVersion2.nSumV3(9));
+        Assertions.assertEquals(55, SeriesVersion2.nSumV3(10));
+        Assertions.assertEquals(2850, SeriesVersion2.nSumV3(75));
+    }
+
+    @Test
+    void factorialV2() {
+        Assertions.assertEquals(-1, SeriesVersion2.factorialV2(-1));
+        Assertions.assertEquals(-1, SeriesVersion2.factorialV2(-10));
+        Assertions.assertEquals(-1, SeriesVersion2.factorialV2(-55));
+
+        Assertions.assertEquals(1, SeriesVersion2.factorialV2(0));
+        Assertions.assertEquals(1, SeriesVersion2.factorialV2(1));
+        Assertions.assertEquals(2, SeriesVersion2.factorialV2(2));
+        Assertions.assertEquals(6, SeriesVersion2.factorialV2(3));
+        Assertions.assertEquals(24, SeriesVersion2.factorialV2(4));
+        Assertions.assertEquals(120, SeriesVersion2.factorialV2(5));
+        Assertions.assertEquals(720, SeriesVersion2.factorialV2(6));
+        Assertions.assertEquals(5040, SeriesVersion2.factorialV2(7));
+        Assertions.assertEquals(40320, SeriesVersion2.factorialV2(8));
+        Assertions.assertEquals(362880, SeriesVersion2.factorialV2(9));
+        Assertions.assertEquals(3628800, SeriesVersion2.factorialV2(10));
+    }
 
     @Test
     void fibonacciV3() {
