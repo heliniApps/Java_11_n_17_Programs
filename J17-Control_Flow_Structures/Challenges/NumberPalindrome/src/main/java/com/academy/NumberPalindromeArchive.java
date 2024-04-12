@@ -3,6 +3,19 @@ package com.academy;
 public class NumberPalindromeArchive {
 
     /*
+     * Version 4:
+     * Using 'StringBuilder' and, comparing original and reversed number String
+     * with "compareTo()" method.
+     */
+    public static boolean isPalindromeV4(int number) {
+        String numberStr = "" + Math.abs(number);
+        StringBuilder numberSb = new StringBuilder(numberStr);
+        StringBuilder reverseSb = new StringBuilder(numberStr).reverse();
+
+        return numberSb.compareTo(reverseSb) == 0;
+    }
+
+    /*
      * Version 3:
      * Using the StringBuilder class. Inbuilt "<StringBuilder Obj>.reverse()" method.
      */
@@ -52,16 +65,14 @@ public class NumberPalindromeArchive {
             numberStr = numberStr.substring(1);
         }
         int length = numberStr.length();
-        boolean isPalindrome = true;
 
         for (int i = 0; i <= (length / 2); i++) {
             char digitFromStart = numberStr.charAt(i);
             char digitFromEnd = numberStr.charAt((length - 1) - i);
             if (digitFromStart != digitFromEnd) {
-                isPalindrome = false;
-                break;
+                return false;
             }
         }
-        return isPalindrome;
+        return true;
     }
 }
