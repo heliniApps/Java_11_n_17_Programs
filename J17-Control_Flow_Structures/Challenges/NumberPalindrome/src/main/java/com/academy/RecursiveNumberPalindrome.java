@@ -4,22 +4,20 @@ public class RecursiveNumberPalindrome {
 
     private static int reverseNumber = 0;
 
-    public static boolean isPalindrome(int number) {
-        clearReverseNumber();
-        reverse(number);
-        return (number == reverseNumber);
-    }
-
-    private static int reverse(int number) {
+    public static int reverse(int number) {
         if (number == 0) {
-            return reverseNumber;
+            int reversed = reverseNumber;
+            reverseNumber = 0;
+            return reversed;
         }
         int lastDigit = number % 10;
         reverseNumber = (reverseNumber * 10) + lastDigit;
+
         return reverse(number / 10);
     }
 
-    private static void clearReverseNumber() {
-        reverseNumber = 0;
+    public static boolean isPalindrome(int number) {
+        int reversedNum = reverse(number);
+        return (number == reversedNum);
     }
 }

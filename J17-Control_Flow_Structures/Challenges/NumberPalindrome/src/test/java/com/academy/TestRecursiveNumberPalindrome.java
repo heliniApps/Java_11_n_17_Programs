@@ -50,48 +50,22 @@ class TestRecursiveNumberPalindrome {
 
     @Test
     void reverse() {
-        /*RecursiveNumberPalindrome.clearReverseNumber();
-
-        Assertions.assertEquals(-221, RecursiveNumberPalindrome.reverse(-122));
-        RecursiveNumberPalindrome.clearReverseNumber();
-
-        Assertions.assertEquals(-654, RecursiveNumberPalindrome.reverse(-456));
-        RecursiveNumberPalindrome.clearReverseNumber();
-
-        Assertions.assertEquals(-1, RecursiveNumberPalindrome.reverse(-100));
-        RecursiveNumberPalindrome.clearReverseNumber();
-
-        Assertions.assertEquals(-7007, RecursiveNumberPalindrome.reverse(-7007));
-        RecursiveNumberPalindrome.clearReverseNumber();
-
         Assertions.assertEquals(-3, RecursiveNumberPalindrome.reverse(-3));
-        RecursiveNumberPalindrome.clearReverseNumber();
+        Assertions.assertEquals(-221, RecursiveNumberPalindrome.reverse(-122));
+        Assertions.assertEquals(-654, RecursiveNumberPalindrome.reverse(-456));
+        Assertions.assertEquals(-1, RecursiveNumberPalindrome.reverse(-100));
+        Assertions.assertEquals(-5432, RecursiveNumberPalindrome.reverse(-2345));
+        Assertions.assertEquals(-7007, RecursiveNumberPalindrome.reverse(-7007));
 
         Assertions.assertEquals(0, RecursiveNumberPalindrome.reverse(0));
-        RecursiveNumberPalindrome.clearReverseNumber();
-
         Assertions.assertEquals(2, RecursiveNumberPalindrome.reverse(2));
-        RecursiveNumberPalindrome.clearReverseNumber();
-
         Assertions.assertEquals(34, RecursiveNumberPalindrome.reverse(43));
-        RecursiveNumberPalindrome.clearReverseNumber();
-
         Assertions.assertEquals(1, RecursiveNumberPalindrome.reverse(100));
-        RecursiveNumberPalindrome.clearReverseNumber();
-
         Assertions.assertEquals(321, RecursiveNumberPalindrome.reverse(123));
-        RecursiveNumberPalindrome.clearReverseNumber();
-
         Assertions.assertEquals(87654, RecursiveNumberPalindrome.reverse(45678));
-        RecursiveNumberPalindrome.clearReverseNumber();
-
         Assertions.assertEquals(1221, RecursiveNumberPalindrome.reverse(1221));
-        RecursiveNumberPalindrome.clearReverseNumber();
-
+        Assertions.assertEquals(6789, RecursiveNumberPalindrome.reverse(9876));
         Assertions.assertEquals(234432, RecursiveNumberPalindrome.reverse(234432));
-        RecursiveNumberPalindrome.clearReverseNumber();
-
         Assertions.assertEquals(2345432, RecursiveNumberPalindrome.reverse(2345432));
-        RecursiveNumberPalindrome.clearReverseNumber();*/
     }
 }

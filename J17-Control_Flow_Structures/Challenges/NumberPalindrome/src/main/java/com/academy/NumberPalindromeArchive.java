@@ -53,6 +53,28 @@ public class NumberPalindromeArchive {
     }
 
     /*
+     * Version 1.1:
+     * Casting the 'number' argument to 'long' data type,
+     * so that "Math.abs(int)" does not return a negative value due to Integer overflow.
+     *
+     * e.g.: Math.abs(Integer.MIN_VALUE) = 2147483648 (> Integer.MAX_VALUE)
+     */
+    public static boolean isPalindromeV1_1(int number) {
+
+        String numberStr = String.valueOf(Math.abs((long) number));
+        int length = numberStr.length();
+
+        for (int i = 0; i <= (length / 2); i++) {
+            char digitFromStart = numberStr.charAt(i);
+            char digitFromEnd = numberStr.charAt((length - 1) - i);
+            if (digitFromStart != digitFromEnd) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /*
      * Version 1:
      * Converts the 'number' to a String, and then,
      * compares the numbers from the start of string, with the ones at the end,

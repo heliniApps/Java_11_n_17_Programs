@@ -139,6 +139,48 @@ class TestNumberPalindromeArchive {
     }
 
     @Test
+    void isPalindromeV1_1() {
+        Assertions.assertTrue(NumberPalindromeArchive.isPalindromeV1_1(-121));
+        Assertions.assertTrue(NumberPalindromeArchive.isPalindromeV1_1(-1221));
+        Assertions.assertTrue(NumberPalindromeArchive.isPalindromeV1_1(-12321));
+        Assertions.assertTrue(NumberPalindromeArchive.isPalindromeV1_1(-1001));
+        Assertions.assertTrue(NumberPalindromeArchive.isPalindromeV1_1(-22));
+        Assertions.assertTrue(NumberPalindromeArchive.isPalindromeV1_1(-77));
+        Assertions.assertTrue(NumberPalindromeArchive.isPalindromeV1_1(-2));
+        Assertions.assertTrue(NumberPalindromeArchive.isPalindromeV1_1(-9));
+        Assertions.assertTrue(NumberPalindromeArchive.isPalindromeV1_1(0));
+        Assertions.assertTrue(NumberPalindromeArchive.isPalindromeV1_1(1));
+        Assertions.assertTrue(NumberPalindromeArchive.isPalindromeV1_1(5));
+        Assertions.assertTrue(NumberPalindromeArchive.isPalindromeV1_1(55));
+        Assertions.assertTrue(NumberPalindromeArchive.isPalindromeV1_1(99));
+        Assertions.assertTrue(NumberPalindromeArchive.isPalindromeV1_1(121));
+        Assertions.assertTrue(NumberPalindromeArchive.isPalindromeV1_1(1221));
+        Assertions.assertTrue(NumberPalindromeArchive.isPalindromeV1_1(12321));
+        Assertions.assertTrue(NumberPalindromeArchive.isPalindromeV1_1(1001));
+        Assertions.assertTrue(NumberPalindromeArchive.isPalindromeV1_1(707));
+        Assertions.assertTrue(NumberPalindromeArchive.isPalindromeV1_1(808));
+        Assertions.assertTrue(NumberPalindromeArchive.isPalindromeV1_1(4884));
+        Assertions.assertTrue(NumberPalindromeArchive.isPalindromeV1_1(345676543));
+        Assertions.assertTrue(NumberPalindromeArchive.isPalindromeV1_1(34566543));
+
+        Assertions.assertFalse(NumberPalindromeArchive.isPalindromeV1_1(-2345));
+        Assertions.assertFalse(NumberPalindromeArchive.isPalindromeV1_1(-1002));
+        Assertions.assertFalse(NumberPalindromeArchive.isPalindromeV1_1(-122));
+        Assertions.assertFalse(NumberPalindromeArchive.isPalindromeV1_1(-567965));
+        Assertions.assertFalse(NumberPalindromeArchive.isPalindromeV1_1(-12));
+        Assertions.assertFalse(NumberPalindromeArchive.isPalindromeV1_1(-43));
+        Assertions.assertFalse(NumberPalindromeArchive.isPalindromeV1_1(2345));
+        Assertions.assertFalse(NumberPalindromeArchive.isPalindromeV1_1(1220));
+        Assertions.assertFalse(NumberPalindromeArchive.isPalindromeV1_1(100));
+        Assertions.assertFalse(NumberPalindromeArchive.isPalindromeV1_1(122));
+        Assertions.assertFalse(NumberPalindromeArchive.isPalindromeV1_1(56));
+        Assertions.assertFalse(NumberPalindromeArchive.isPalindromeV1_1(70));
+        Assertions.assertFalse(NumberPalindromeArchive.isPalindromeV1_1(5677865));
+        Assertions.assertFalse(NumberPalindromeArchive.isPalindromeV1_1(Integer.MIN_VALUE));
+        Assertions.assertFalse(NumberPalindromeArchive.isPalindromeV1_1(Integer.MAX_VALUE));
+    }
+
+    @Test
     void isPalindromeV1() {
         Assertions.assertTrue(NumberPalindromeArchive.isPalindromeV1(-121));
         Assertions.assertTrue(NumberPalindromeArchive.isPalindromeV1(-1221));
