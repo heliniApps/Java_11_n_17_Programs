@@ -14,7 +14,7 @@ public class SharedDigitArchive {
      * Using Integer Lists that contains digits of each number argument.
      */
     public static boolean hasSharedDigitV6(int num1, int num2) {
-        if ((num1 < 10) || (num1 > 99) || (num2 < 10) || (num2 > 99)) {
+        if (!isValidNumber(num1) || !isValidNumber(num2)) {
             return false;
         }
         List<Integer> list1 = Arrays.asList((num1 / 10), (num1 % 10));
@@ -32,7 +32,7 @@ public class SharedDigitArchive {
      * Solution valid for numbers of any length.
      */
     public static boolean hasSharedDigitV5(int num1, int num2) {
-        if ((num1 < 10) || (num1 > 99) || (num2 < 10) || (num2 > 99)) {
+        if (!isValidNumber(num1) || !isValidNumber(num2)) {
             return false;
         }
         IntPredicate hasMatch = (digit1) ->
@@ -46,7 +46,7 @@ public class SharedDigitArchive {
      * Use String "contains()" method with the String representation of numbers.
      */
     public static boolean hasSharedDigitV2(int num1, int num2) {
-        if ((num1 < 10) || (num1 > 99) || (num2 < 10) || (num2 > 99)) {
+        if (!isValidNumber(num1) || !isValidNumber(num2)) {
             return false;
         }
         String firstDigit = "" + (num1 / 10);
@@ -61,7 +61,7 @@ public class SharedDigitArchive {
      * Calculate first and last digits of both numbers and, compare using logical operators.
      */
     public static boolean hasSharedDigitV1(int numA, int numB) {
-        if ((numA < 10) || (numA > 99) || (numB < 10) || (numB > 99)) {
+        if (!isValidNumber(numA) || !isValidNumber(numB)) {
             return false;
         }
         int numAFirst = numA / 10;
@@ -70,5 +70,9 @@ public class SharedDigitArchive {
         int numBLast = numB % 10;
 
         return (numAFirst == numBFirst) || (numAFirst == numBLast) || (numALast == numBFirst) || (numALast == numBLast);
+    }
+
+    private static boolean isValidNumber(int number) {
+        return SharedDigit.isValidNumber(number);
     }
 }

@@ -24,6 +24,8 @@ class TestSharedDigit {
         Assertions.assertFalse(SharedDigit.hasSharedDigit(10, 4));
         Assertions.assertFalse(SharedDigit.hasSharedDigit(9, 78));
         Assertions.assertFalse(SharedDigit.hasSharedDigit(56, 5));
+        Assertions.assertFalse(SharedDigit.hasSharedDigit(11, 23));
+        Assertions.assertFalse(SharedDigit.hasSharedDigit(41, 22));
         Assertions.assertFalse(SharedDigit.hasSharedDigit(8, 88));
         Assertions.assertFalse(SharedDigit.hasSharedDigit(-8, 88));
         Assertions.assertFalse(SharedDigit.hasSharedDigit(44, -44));
