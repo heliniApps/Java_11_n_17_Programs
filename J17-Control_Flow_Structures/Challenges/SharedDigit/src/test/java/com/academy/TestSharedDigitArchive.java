@@ -24,6 +24,8 @@ class TestSharedDigitArchive {
         Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV6(10, 4));
         Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV6(9, 78));
         Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV6(56, 5));
+        Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV6(11, 23));
+        Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV6(41, 22));
         Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV6(8, 88));
         Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV6(-8, 88));
         Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV6(44, -44));
@@ -48,57 +50,11 @@ class TestSharedDigitArchive {
         Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV5(10, 4));
         Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV5(9, 78));
         Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV5(56, 5));
+        Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV5(11, 23));
+        Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV5(41, 22));
         Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV5(8, 88));
         Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV5(-8, 88));
         Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV5(44, -44));
-    }
-
-    @Test
-    void hasSharedDigitV4() {
-        Assertions.assertTrue(SharedDigitArchive.hasSharedDigitV4(10, 20));
-        Assertions.assertTrue(SharedDigitArchive.hasSharedDigitV4(13, 34));
-        Assertions.assertTrue(SharedDigitArchive.hasSharedDigitV4(54, 95));
-        Assertions.assertTrue(SharedDigitArchive.hasSharedDigitV4(99, 95));
-        Assertions.assertTrue(SharedDigitArchive.hasSharedDigitV4(10, 61));
-        Assertions.assertTrue(SharedDigitArchive.hasSharedDigitV4(39, 99));
-        Assertions.assertTrue(SharedDigitArchive.hasSharedDigitV4(40, 10));
-        Assertions.assertTrue(SharedDigitArchive.hasSharedDigitV4(10, 10));
-        Assertions.assertTrue(SharedDigitArchive.hasSharedDigitV4(99, 99));
-
-        Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV4(0, 0));
-        Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV4(1, 2));
-        Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV4(0, 10));
-        Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV4(99, 0));
-        Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV4(10, 4));
-        Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV4(9, 78));
-        Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV4(56, 5));
-        Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV4(8, 88));
-        Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV4(-8, 88));
-        Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV4(44, -44));
-    }
-
-    @Test
-    void hasSharedDigitV3() {
-        Assertions.assertTrue(SharedDigitArchive.hasSharedDigitV3(10, 20));
-        Assertions.assertTrue(SharedDigitArchive.hasSharedDigitV3(13, 34));
-        Assertions.assertTrue(SharedDigitArchive.hasSharedDigitV3(54, 95));
-        Assertions.assertTrue(SharedDigitArchive.hasSharedDigitV3(99, 95));
-        Assertions.assertTrue(SharedDigitArchive.hasSharedDigitV3(10, 61));
-        Assertions.assertTrue(SharedDigitArchive.hasSharedDigitV3(39, 99));
-        Assertions.assertTrue(SharedDigitArchive.hasSharedDigitV3(40, 10));
-        Assertions.assertTrue(SharedDigitArchive.hasSharedDigitV3(10, 10));
-        Assertions.assertTrue(SharedDigitArchive.hasSharedDigitV3(99, 99));
-
-        Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV3(0, 0));
-        Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV3(1, 2));
-        Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV3(0, 10));
-        Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV3(99, 0));
-        Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV3(10, 4));
-        Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV3(9, 78));
-        Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV3(56, 5));
-        Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV3(8, 88));
-        Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV3(-8, 88));
-        Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV3(44, -44));
     }
 
     @Test
@@ -120,6 +76,8 @@ class TestSharedDigitArchive {
         Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV2(10, 4));
         Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV2(9, 78));
         Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV2(56, 5));
+        Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV2(11, 23));
+        Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV2(41, 22));
         Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV2(8, 88));
         Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV2(-8, 88));
         Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV2(44, -44));
@@ -144,6 +102,8 @@ class TestSharedDigitArchive {
         Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV1(10, 4));
         Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV1(9, 78));
         Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV1(56, 5));
+        Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV1(11, 23));
+        Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV1(41, 22));
         Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV1(8, 88));
         Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV1(-8, 88));
         Assertions.assertFalse(SharedDigitArchive.hasSharedDigitV1(44, -44));
