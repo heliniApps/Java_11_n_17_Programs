@@ -12,10 +12,20 @@ public class SharedDigit {
      * @return True, if there's a common digit that appears in both numbers.
      */
     public static boolean hasSharedDigit(int num1, int num2) {
-        if ((num1 < 10) || (num1 > 99) || (num2 < 10) || (num2 > 99)) {
+        if (!isValidNumber(num1) || !isValidNumber(num2)) {
             return false;
         }
         return Stream.of(String.valueOf(num1).split(""))
                 .anyMatch(String.valueOf(num2)::contains);
+    }
+
+    /**
+     * Validates if the input number argument is within the valid range.
+     *
+     * @param number Numeric value to validate.
+     * @return True, if the value is within the range 10 (inclusive) - 99 (inclusive).
+     */
+    public static boolean isValidNumber(int number) {
+        return (number >= 10) && (number <= 99);
     }
 }
