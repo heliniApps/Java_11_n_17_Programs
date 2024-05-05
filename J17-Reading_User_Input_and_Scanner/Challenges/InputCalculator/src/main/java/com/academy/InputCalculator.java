@@ -31,6 +31,7 @@ public class InputCalculator {
             sum += number;
             count++;
         }
+        scanner.close();
 
         if (count > 0) {
             average = Math.round((double) sum / count);
