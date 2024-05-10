@@ -12,8 +12,9 @@ public class InputCalculator {
 
     /**
      * Calculates the sum and average of numbers entered by the user.
+     * Uses "Scanner.nextInt()" with exception handling.
      */
-    public static void inputThenPrintSumAndAverage() {
+    private static void inputThenPrintSumAndAverage() {
         int sum = 0;
         long average = 0;
         int count = 0;
@@ -21,16 +22,15 @@ public class InputCalculator {
 
         while (true) {
             System.out.println("Enter a number, or type any character to quit: ");
-            int number = 0;
             try {
-                number = scanner.nextInt();
+                sum += scanner.nextInt();
             } catch (NoSuchElementException ne) {
                 scanner.nextLine();
                 break;
             }
-            sum += number;
             count++;
         }
+        scanner.close();
 
         if (count > 0) {
             average = Math.round((double) sum / count);
